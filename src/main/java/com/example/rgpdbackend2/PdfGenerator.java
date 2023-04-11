@@ -5,19 +5,13 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.*;
-import com.itextpdf.text.pdf.draw.VerticalPositionMark;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
-
 import javax.imageio.ImageIO;
-import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
 
 import static com.example.rgpdbackend2.DrawCharte.drawCharteExample;
 
@@ -36,7 +30,7 @@ public class PdfGenerator {
         // Creating Chunk
         Font fontsize0 = FontFactory.getFont(FontFactory.TIMES_ROMAN);
         fontsize0.setSize(40);
-        Paragraph paragraph10 = new Paragraph("RGPD", fontsize0);
+        Paragraph paragraph10 = new Paragraph("XXXXX", fontsize0);
         paragraph10.setAlignment(Element.ALIGN_RIGHT);
         Paragraph paragraph11 = new Paragraph("TUNISIE", fontsize0);
         paragraph11.setAlignment(Element.ALIGN_LEFT);
@@ -64,7 +58,7 @@ public class PdfGenerator {
         paragraph3.setAlignment(Element.ALIGN_CENTER);
         paragraph3.add("\n");
         document.add(paragraph3);
-        Chunk chunk1 = new Chunk("contact@rgpdtunisie.com", new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD, BaseColor.RED));
+        Chunk chunk1 = new Chunk("contact@********.com", new Font(Font.FontFamily.TIMES_ROMAN, 20, Font.BOLD, BaseColor.RED));
         Phrase phrase1 = new Phrase();
         phrase1.add(chunk1);
         Paragraph paragraph4 = new Paragraph();
@@ -293,21 +287,12 @@ public class PdfGenerator {
         PdfPTable table22 = new PdfPTable(1);
         table22.setWidthPercentage(96);
         table22.addCell(lineCell);
-//        document.add(table22);
-        //************************************Add pdf URL to the Document
-//        String url = "https://relead.tn/";
-//        PdfReader reader = new PdfReader(new URL(url));
-//        int pageNum = 1; // page number to redirect to in the other document
-//        PdfDestination dest = new PdfDestination(PdfDestination.XYZ, 0, reader.getPageSize(pageNum).getHeight(), 0);
-//        PdfAction action = PdfAction.gotoLocalPage(pageNum, dest, writer);
-//        Chunk chunk = new Chunk("Click");
-//        chunk.setBackground(BaseColor.RED);
-//        chunk.setAction(action);
+
         //****************************************************************
 
         Paragraph paragraph23 = new Paragraph(new Phrase("\n"));
         paragraph23.add("Bravo Votre organisation a désigné un DPO Mission RGPD est une plateforme qui centralise\n");
-       // paragraph23.add(chunk);
+
         paragraph23.add(" tous les outils utiles pour faciliter la vie du DPO dans l'exercice de ses fonctions :\n" +
                 "questionnaires d'audit, registre des incidents, gestion des demandes d'exercice de droits,\n"+
                 "etc. Il semble même que ce soit vous l'heureux élu en charge de cette mission, ne vous\n" +
